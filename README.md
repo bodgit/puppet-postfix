@@ -399,6 +399,7 @@ The following parameters map 1:1 to their equivalent in `main.cf`:
 * `multi_recipient_bounce_reject_code`
 * `mydestination`
 * `mydomain`
+* `mydomain_fallback`
 * `myhostname`
 * `mynetworks`
 * `mynetworks_style`
