@@ -91,715 +91,721 @@ The name of the service managing the Postfix daemons.
 
 The following parameters map 1:1 to their equivalent in `main.cf`:
 
-* `twobounce_notice_recipient` (`2bounce_notice_recipient` is a violation of
-  Puppet variable naming conventions)
-* `access_map_defer_code`
-* `access_map_reject_code`
-* `address_verify_cache_cleanup_interval`
-* `address_verify_default_transport`
-* `address_verify_local_transport`
-* `address_verify_map`
-* `address_verify_negative_cache`
-* `address_verify_negative_expire_time`
-* `address_verify_negative_refresh_time`
-* `address_verify_poll_count`
-* `address_verify_poll_delay`
-* `address_verify_positive_expire_time`
-* `address_verify_positive_refresh_time`
-* `address_verify_relay_transport`
-* `address_verify_relayhost`
-* `address_verify_sender`
-* `address_verify_sender_dependent_default_transport_maps`
-* `address_verify_sender_dependent_relayhost_maps`
-* `address_verify_sender_ttl`
-* `address_verify_service_name`
-* `address_verify_transport_maps`
-* `address_verify_virtual_transport`
-* `alias_database`
-* `alias_maps`
-* `allow_mail_to_commands`
-* `allow_mail_to_files`
-* `allow_min_user`
-* `allow_percent_hack`
-* `allow_untrusted_routing`
-* `alternate_config_directories`
-* `always_add_missing_headers`
-* `always_bcc`
-* `anvil_rate_time_unit`
-* `anvil_status_update_time`
-* `append_at_myorigin`
-* `append_dot_mydomain`
-* `application_event_drain_time`
-* `authorized_flush_users`
-* `authorized_mailq_users`
-* `authorized_submit_users`
-* `backwards_bounce_logfile_compatibility`
-* `berkeley_db_create_buffer_size`
-* `berkeley_db_read_buffer_size`
-* `best_mx_transport`
-* `biff`
-* `body_checks`
-* `body_checks_size_limit`
-* `bounce_notice_recipient`
-* `bounce_queue_lifetime`
-* `bounce_service_name`
-* `bounce_size_limit`
-* `bounce_template_file`
-* `broken_sasl_auth_clients`
-* `canonical_classes`
-* `canonical_maps`
-* `cleanup_service_name`
-* `command_directory`
-* `command_execution_directory`
-* `command_expansion_filter`
-* `command_time_limit`
-* `config_directory`
-* `connection_cache_protocol_timeout`
-* `connection_cache_service_name`
-* `connection_cache_status_update_time`
-* `connection_cache_ttl_limit`
-* `content_filter`
-* `cyrus_sasl_config_path`
-* `daemon_directory`
-* `daemon_table_open_error_is_fatal`
-* `daemon_timeout`
-* `data_directory`
-* `debug_peer_level`
-* `debug_peer_list`
-* `debugger_command`
-* `default_database_type`
-* `default_delivery_slot_cost`
-* `default_delivery_slot_discount`
-* `default_delivery_slot_loan`
-* `default_destination_concurrency_failed_cohort_limit`
-* `default_destination_concurrency_limit`
-* `default_destination_concurrency_negative_feedback`
-* `default_destination_concurrency_positive_feedback`
-* `default_destination_rate_delay`
-* `default_destination_recipient_limit`
-* `default_extra_recipient_limit`
-* `default_filter_nexthop`
-* `default_minimum_delivery_slots`
-* `default_privs`
-* `default_process_limit`
-* `default_rbl_reply`
-* `default_recipient_limit`
-* `default_recipient_refill_delay`
-* `default_recipient_refill_limit`
-* `default_transport`
-* `default_verp_delimiters`
-* `defer_code`
-* `defer_service_name`
-* `defer_transports`
-* `delay_logging_resolution_limit`
-* `delay_notice_recipient`
-* `delay_warning_time`
-* `deliver_lock_attempts`
-* `deliver_lock_delay`
-* `destination_concurrency_feedback_debug`
-* `detect_8bit_encoding_header`
-* `disable_dns_lookups`
-* `disable_mime_input_processing`
-* `disable_mime_output_conversion`
-* `disable_verp_bounces`
-* `disable_vrfy_command`
-* `dnsblog_reply_delay`
-* `dnsblog_service_name`
-* `dont_remove`
-* `double_bounce_sender`
-* `duplicate_filter_limit`
-* `empty_address_default_transport_maps_lookup_key`
-* `empty_address_recipient`
-* `empty_address_relayhost_maps_lookup_key`
-* `enable_long_queue_ids`
-* `enable_original_recipient`
-* `error_notice_recipient`
-* `error_service_name`
-* `execution_directory_expansion_filter`
-* `expand_owner_alias`
-* `export_environment`
-* `fallback_transport`
-* `fallback_transport_maps`
-* `fast_flush_domains`
-* `fast_flush_purge_time`
-* `fast_flush_refresh_time`
-* `fault_injection_code`
-* `flush_service_name`
-* `fork_attempts`
-* `fork_delay`
-* `forward_expansion_filter`
-* `forward_path`
-* `frozen_delivered_to`
-* `hash_queue_depth`
-* `hash_queue_names`
-* `header_address_token_limit`
-* `header_checks`
-* `header_size_limit`
-* `helpful_warnings`
-* `home_mailbox`
-* `hopcount_limit`
-* `html_directory`
-* `ignore_mx_lookup_error`
-* `import_environment`
-* `in_flow_delay`
-* `inet_interfaces`
-* `inet_protocols`
-* `initial_destination_concurrency`
-* `internal_mail_filter_classes`
-* `invalid_hostname_reject_code`
-* `ipc_idle`
-* `ipc_timeout`
-* `ipc_ttl`
-* `line_length_limit`
-* `lmtp_address_preference`
-* `lmtp_assume_final`
-* `lmtp_bind_address`
-* `lmtp_bind_address6`
-* `lmtp_body_checks`
-* `lmtp_cname_overrides_servername`
-* `lmtp_connect_timeout`
-* `lmtp_connection_cache_destinations`
-* `lmtp_connection_cache_on_demand`
-* `lmtp_connection_cache_time_limit`
-* `lmtp_connection_reuse_time_limit`
-* `lmtp_data_done_timeout`
-* `lmtp_data_init_timeout`
-* `lmtp_data_xfer_timeout`
-* `lmtp_defer_if_no_mx_address_found`
-* `lmtp_discard_lhlo_keyword_address_maps`
-* `lmtp_discard_lhlo_keywords`
-* `lmtp_dns_resolver_options`
-* `lmtp_enforce_tls`
-* `lmtp_generic_maps`
-* `lmtp_header_checks`
-* `lmtp_host_lookup`
-* `lmtp_lhlo_name`
-* `lmtp_lhlo_timeout`
-* `lmtp_line_length_limit`
-* `lmtp_mail_timeout`
-* `lmtp_mime_header_checks`
-* `lmtp_mx_address_limit`
-* `lmtp_mx_session_limit`
-* `lmtp_nested_header_checks`
-* `lmtp_per_record_deadline`
-* `lmtp_pix_workaround_delay_time`
-* `lmtp_pix_workaround_maps`
-* `lmtp_pix_workaround_threshold_time`
-* `lmtp_pix_workarounds`
-* `lmtp_quit_timeout`
-* `lmtp_quote_rfc821_envelope`
-* `lmtp_randomize_addresses`
-* `lmtp_rcpt_timeout`
-* `lmtp_reply_filter`
-* `lmtp_rset_timeout`
-* `lmtp_sasl_auth_cache_name`
-* `lmtp_sasl_auth_cache_time`
-* `lmtp_sasl_auth_enable`
-* `lmtp_sasl_auth_soft_bounce`
-* `lmtp_sasl_mechanism_filter`
-* `lmtp_sasl_password_maps`
-* `lmtp_sasl_path`
-* `lmtp_sasl_security_options`
-* `lmtp_sasl_tls_security_options`
-* `lmtp_sasl_tls_verified_security_options`
-* `lmtp_sasl_type`
-* `lmtp_send_dummy_mail_auth`
-* `lmtp_send_xforward_command`
-* `lmtp_sender_dependent_authentication`
-* `lmtp_skip_5xx_greeting`
-* `lmtp_skip_quit_response`
-* `lmtp_starttls_timeout`
-* `lmtp_tcp_port`
-* `lmtp_tls_cafile`
-* `lmtp_tls_capath`
-* `lmtp_tls_block_early_mail_reply`
-* `lmtp_tls_cert_file`
-* `lmtp_tls_ciphers`
-* `lmtp_tls_dcert_file`
-* `lmtp_tls_dkey_file`
-* `lmtp_tls_eccert_file`
-* `lmtp_tls_eckey_file`
-* `lmtp_tls_enforce_peername`
-* `lmtp_tls_exclude_ciphers`
-* `lmtp_tls_fingerprint_cert_match`
-* `lmtp_tls_fingerprint_digest`
-* `lmtp_tls_key_file`
-* `lmtp_tls_loglevel`
-* `lmtp_tls_mandatory_ciphers`
-* `lmtp_tls_mandatory_exclude_ciphers`
-* `lmtp_tls_mandatory_protocols`
-* `lmtp_tls_note_starttls_offer`
-* `lmtp_tls_per_site`
-* `lmtp_tls_policy_maps`
-* `lmtp_tls_protocols`
-* `lmtp_tls_scert_verifydepth`
-* `lmtp_tls_secure_cert_match`
-* `lmtp_tls_security_level`
-* `lmtp_tls_session_cache_database`
-* `lmtp_tls_session_cache_timeout`
-* `lmtp_tls_verify_cert_match`
-* `lmtp_use_tls`
-* `lmtp_xforward_timeout`
-* `local_command_shell`
-* `local_header_rewrite_clients`
-* `local_recipient_maps`
-* `local_transport`
-* `luser_relay`
-* `mail_name`
-* `mail_owner`
-* `mail_release_date`
-* `mail_spool_directory`
-* `mail_version`
-* `mailbox_command`
-* `mailbox_command_maps`
-* `mailbox_delivery_lock`
-* `mailbox_size_limit`
-* `mailbox_transport`
-* `mailbox_transport_maps`
-* `mailq_path`
-* `manpage_directory`
-* `maps_rbl_domains`
-* `maps_rbl_reject_code`
-* `masquerade_classes`
-* `masquerade_domains`
-* `masquerade_exceptions`
-* `master_service_disable`
-* `max_idle`
-* `max_use`
-* `maximal_backoff_time`
-* `maximal_queue_lifetime`
-* `message_reject_characters`
-* `message_size_limit`
-* `message_strip_characters`
-* `milter_command_timeout`
-* `milter_connect_macros`
-* `milter_connect_timeout`
-* `milter_content_timeout`
-* `milter_data_macros`
-* `milter_default_action`
-* `milter_end_of_data_macros`
-* `milter_end_of_header_macros`
-* `milter_header_checks`
-* `milter_helo_macros`
-* `milter_macro_daemon_name`
-* `milter_macro_v`
-* `milter_mail_macros`
-* `milter_protocol`
-* `milter_rcpt_macros`
-* `milter_unknown_command_macros`
-* `mime_boundary_length_limit`
-* `mime_header_checks`
-* `mime_nesting_limit`
-* `minimal_backoff_time`
-* `multi_instance_directories`
-* `multi_instance_enable`
-* `multi_instance_group`
-* `multi_instance_name`
-* `multi_instance_wrapper`
-* `multi_recipient_bounce_reject_code`
-* `mydestination`
-* `mydomain`
-* `myhostname`
-* `mynetworks`
-* `mynetworks_style`
-* `myorigin`
-* `nested_header_checks`
-* `newaliases_path`
-* `non_fqdn_reject_code`
-* `non_smtpd_milters`
-* `notify_classes`
-* `owner_request_special`
-* `parent_domain_matches_subdomains`
-* `permit_mx_backup_networks`
-* `pickup_service_name`
-* `plaintext_reject_code`
-* `postmulti_control_commands`
-* `postmulti_start_commands`
-* `postmulti_stop_commands`
-* `postscreen_access_list`
-* `postscreen_bare_newline_action`
-* `postscreen_bare_newline_enable`
-* `postscreen_bare_newline_ttl`
-* `postscreen_blacklist_action`
-* `postscreen_cache_cleanup_interval`
-* `postscreen_cache_map`
-* `postscreen_cache_retention_time`
-* `postscreen_client_connection_count_limit`
-* `postscreen_command_count_limit`
-* `postscreen_command_filter`
-* `postscreen_command_time_limit`
-* `postscreen_disable_vrfy_command`
-* `postscreen_discard_ehlo_keyword_address_maps`
-* `postscreen_discard_ehlo_keywords`
-* `postscreen_dnsbl_action`
-* `postscreen_dnsbl_reply_map`
-* `postscreen_dnsbl_sites`
-* `postscreen_dnsbl_threshold`
-* `postscreen_dnsbl_ttl`
-* `postscreen_enforce_tls`
-* `postscreen_expansion_filter`
-* `postscreen_forbidden_commands`
-* `postscreen_greet_action`
-* `postscreen_greet_banner`
-* `postscreen_greet_ttl`
-* `postscreen_greet_wait`
-* `postscreen_helo_required`
-* `postscreen_non_smtp_command_action`
-* `postscreen_non_smtp_command_enable`
-* `postscreen_non_smtp_command_ttl`
-* `postscreen_pipelining_action`
-* `postscreen_pipelining_enable`
-* `postscreen_pipelining_ttl`
-* `postscreen_post_queue_limit`
-* `postscreen_pre_queue_limit`
-* `postscreen_reject_footer`
-* `postscreen_tls_security_level`
-* `postscreen_upstream_proxy_protocol`
-* `postscreen_upstream_proxy_timeout`
-* `postscreen_use_tls`
-* `postscreen_watchdog_timeout`
-* `postscreen_whitelist_interfaces`
-* `prepend_delivered_header`
-* `process_id_directory`
-* `propagate_unmatched_extensions`
-* `proxy_interfaces`
-* `proxy_read_maps`
-* `proxy_write_maps`
-* `proxymap_service_name`
-* `proxywrite_service_name`
-* `qmgr_clog_warn_time`
-* `qmgr_daemon_timeout`
-* `qmgr_fudge_factor`
-* `qmgr_ipc_timeout`
-* `qmgr_message_active_limit`
-* `qmgr_message_recipient_limit`
-* `qmgr_message_recipient_minimum`
-* `qmqpd_authorized_clients`
-* `qmqpd_client_port_logging`
-* `qmqpd_error_delay`
-* `qmqpd_timeout`
-* `queue_directory`
-* `queue_file_attribute_count_limit`
-* `queue_minfree`
-* `queue_run_delay`
-* `queue_service_name`
-* `rbl_reply_maps`
-* `readme_directory`
-* `receive_override_options`
-* `recipient_bcc_maps`
-* `recipient_canonical_classes`
-* `recipient_canonical_maps`
-* `recipient_delimiter`
-* `reject_code`
-* `reject_tempfail_action`
-* `relay_clientcerts`
-* `relay_domains`
-* `relay_domains_reject_code`
-* `relay_recipient_maps`
-* `relay_transport`
-* `relayhost`
-* `relocated_maps`
-* `remote_header_rewrite_domain`
-* `require_home_directory`
-* `reset_owner_alias`
-* `resolve_dequoted_address`
-* `resolve_null_domain`
-* `resolve_numeric_domain`
-* `rewrite_service_name`
-* `sample_directory`
-* `send_cyrus_sasl_authzid`
-* `sender_bcc_maps`
-* `sender_canonical_classes`
-* `sender_canonical_maps`
-* `sender_dependent_default_transport_maps`
-* `sender_dependent_relayhost_maps`
-* `sendmail_fix_line_endings`
-* `sendmail_path`
-* `service_throttle_time`
-* `setgid_group`
-* `show_user_unknown_table_name`
-* `showq_service_name`
-* `smtp_address_preference`
-* `smtp_always_send_ehlo`
-* `smtp_bind_address`
-* `smtp_bind_address6`
-* `smtp_body_checks`
-* `smtp_cname_overrides_servername`
-* `smtp_connect_timeout`
-* `smtp_connection_cache_destinations`
-* `smtp_connection_cache_on_demand`
-* `smtp_connection_cache_time_limit`
-* `smtp_connection_reuse_time_limit`
-* `smtp_data_done_timeout`
-* `smtp_data_init_timeout`
-* `smtp_data_xfer_timeout`
-* `smtp_defer_if_no_mx_address_found`
-* `smtp_discard_ehlo_keyword_address_maps`
-* `smtp_discard_ehlo_keywords`
-* `smtp_dns_resolver_options`
-* `smtp_enforce_tls`
-* `smtp_fallback_relay`
-* `smtp_generic_maps`
-* `smtp_header_checks`
-* `smtp_helo_name`
-* `smtp_helo_timeout`
-* `smtp_host_lookup`
-* `smtp_line_length_limit`
-* `smtp_mail_timeout`
-* `smtp_mime_header_checks`
-* `smtp_mx_address_limit`
-* `smtp_mx_session_limit`
-* `smtp_nested_header_checks`
-* `smtp_never_send_ehlo`
-* `smtp_per_record_deadline`
-* `smtp_pix_workaround_delay_time`
-* `smtp_pix_workaround_maps`
-* `smtp_pix_workaround_threshold_time`
-* `smtp_pix_workarounds`
-* `smtp_quit_timeout`
-* `smtp_quote_rfc821_envelope`
-* `smtp_randomize_addresses`
-* `smtp_rcpt_timeout`
-* `smtp_reply_filter`
-* `smtp_rset_timeout`
-* `smtp_sasl_auth_cache_name`
-* `smtp_sasl_auth_cache_time`
-* `smtp_sasl_auth_enable`
-* `smtp_sasl_auth_soft_bounce`
-* `smtp_sasl_mechanism_filter`
-* `smtp_sasl_password_maps`
-* `smtp_sasl_path`
-* `smtp_sasl_security_options`
-* `smtp_sasl_tls_security_options`
-* `smtp_sasl_tls_verified_security_options`
-* `smtp_sasl_type`
-* `smtp_send_dummy_mail_auth`
-* `smtp_send_xforward_command`
-* `smtp_sender_dependent_authentication`
-* `smtp_skip_5xx_greeting`
-* `smtp_skip_quit_response`
-* `smtp_starttls_timeout`
-* `smtp_tls_cafile`
-* `smtp_tls_capath`
-* `smtp_tls_block_early_mail_reply`
-* `smtp_tls_cert_file`
-* `smtp_tls_ciphers`
-* `smtp_tls_dcert_file`
-* `smtp_tls_dkey_file`
-* `smtp_tls_eccert_file`
-* `smtp_tls_eckey_file`
-* `smtp_tls_enforce_peername`
-* `smtp_tls_exclude_ciphers`
-* `smtp_tls_fingerprint_cert_match`
-* `smtp_tls_fingerprint_digest`
-* `smtp_tls_key_file`
-* `smtp_tls_loglevel`
-* `smtp_tls_mandatory_ciphers`
-* `smtp_tls_mandatory_exclude_ciphers`
-* `smtp_tls_mandatory_protocols`
-* `smtp_tls_note_starttls_offer`
-* `smtp_tls_per_site`
-* `smtp_tls_policy_maps`
-* `smtp_tls_protocols`
-* `smtp_tls_scert_verifydepth`
-* `smtp_tls_secure_cert_match`
-* `smtp_tls_security_level`
-* `smtp_tls_session_cache_database`
-* `smtp_tls_session_cache_timeout`
-* `smtp_tls_verify_cert_match`
-* `smtp_use_tls`
-* `smtp_xforward_timeout`
-* `smtpd_authorized_verp_clients`
-* `smtpd_authorized_xclient_hosts`
-* `smtpd_authorized_xforward_hosts`
-* `smtpd_banner`
-* `smtpd_client_connection_count_limit`
-* `smtpd_client_connection_rate_limit`
-* `smtpd_client_event_limit_exceptions`
-* `smtpd_client_message_rate_limit`
-* `smtpd_client_new_tls_session_rate_limit`
-* `smtpd_client_port_logging`
-* `smtpd_client_recipient_rate_limit`
-* `smtpd_client_restrictions`
-* `smtpd_command_filter`
-* `smtpd_data_restrictions`
-* `smtpd_delay_open_until_valid_rcpt`
-* `smtpd_delay_reject`
-* `smtpd_discard_ehlo_keyword_address_maps`
-* `smtpd_discard_ehlo_keywords`
-* `smtpd_end_of_data_restrictions`
-* `smtpd_enforce_tls`
-* `smtpd_error_sleep_time`
-* `smtpd_etrn_restrictions`
-* `smtpd_expansion_filter`
-* `smtpd_forbidden_commands`
-* `smtpd_hard_error_limit`
-* `smtpd_helo_required`
-* `smtpd_helo_restrictions`
-* `smtpd_history_flush_threshold`
-* `smtpd_junk_command_limit`
-* `smtpd_log_access_permit_actions`
-* `smtpd_milters`
-* `smtpd_noop_commands`
-* `smtpd_null_access_lookup_key`
-* `smtpd_peername_lookup`
-* `smtpd_per_record_deadline`
-* `smtpd_policy_service_max_idle`
-* `smtpd_policy_service_max_ttl`
-* `smtpd_policy_service_timeout`
-* `smtpd_proxy_ehlo`
-* `smtpd_proxy_filter`
-* `smtpd_proxy_options`
-* `smtpd_proxy_timeout`
-* `smtpd_recipient_limit`
-* `smtpd_recipient_overshoot_limit`
-* `smtpd_recipient_restrictions`
-* `smtpd_reject_footer`
-* `smtpd_reject_unlisted_recipient`
-* `smtpd_reject_unlisted_sender`
-* `smtpd_relay_restrictions`
-* `smtpd_restriction_classes`
-* `smtpd_sasl_auth_enable`
-* `smtpd_sasl_authenticated_header`
-* `smtpd_sasl_exceptions_networks`
-* `smtpd_sasl_local_domain`
-* `smtpd_sasl_path`
-* `smtpd_sasl_security_options`
-* `smtpd_sasl_tls_security_options`
-* `smtpd_sasl_type`
-* `smtpd_sender_login_maps`
-* `smtpd_sender_restrictions`
-* `smtpd_service_name`
-* `smtpd_soft_error_limit`
-* `smtpd_starttls_timeout`
-* `smtpd_timeout`
-* `smtpd_tls_cafile`
-* `smtpd_tls_capath`
-* `smtpd_tls_always_issue_session_ids`
-* `smtpd_tls_ask_ccert`
-* `smtpd_tls_auth_only`
-* `smtpd_tls_ccert_verifydepth`
-* `smtpd_tls_cert_file`
-* `smtpd_tls_ciphers`
-* `smtpd_tls_dcert_file`
-* `smtpd_tls_dh1024_param_file`
-* `smtpd_tls_dh512_param_file`
-* `smtpd_tls_dkey_file`
-* `smtpd_tls_eccert_file`
-* `smtpd_tls_eckey_file`
-* `smtpd_tls_eecdh_grade`
-* `smtpd_tls_exclude_ciphers`
-* `smtpd_tls_fingerprint_digest`
-* `smtpd_tls_key_file`
-* `smtpd_tls_loglevel`
-* `smtpd_tls_mandatory_ciphers`
-* `smtpd_tls_mandatory_exclude_ciphers`
-* `smtpd_tls_mandatory_protocols`
-* `smtpd_tls_protocols`
-* `smtpd_tls_received_header`
-* `smtpd_tls_req_ccert`
-* `smtpd_tls_security_level`
-* `smtpd_tls_session_cache_database`
-* `smtpd_tls_session_cache_timeout`
-* `smtpd_tls_wrappermode`
-* `smtpd_upstream_proxy_protocol`
-* `smtpd_upstream_proxy_timeout`
-* `smtpd_use_tls`
-* `soft_bounce`
-* `stale_lock_time`
-* `strict_7bit_headers`
-* `strict_8bitmime`
-* `strict_8bitmime_body`
-* `strict_mailbox_ownership`
-* `strict_mime_encoding_domain`
-* `strict_rfc821_envelopes`
-* `sun_mailtool_compatibility`
-* `swap_bangpath`
-* `syslog_facility`
-* `syslog_name`
-* `tcp_windowsize`
-* `tls_append_default_ca`
-* `tls_daemon_random_bytes`
-* `tls_disable_workarounds`
-* `tls_eecdh_strong_curve`
-* `tls_eecdh_ultra_curve`
-* `tls_export_cipherlist`
-* `tls_high_cipherlist`
-* `tls_legacy_public_key_fingerprints`
-* `tls_low_cipherlist`
-* `tls_medium_cipherlist`
-* `tls_null_cipherlist`
-* `tls_preempt_cipherlist`
-* `tls_random_bytes`
-* `tls_random_exchange_name`
-* `tls_random_prng_update_period`
-* `tls_random_reseed_period`
-* `tls_random_source`
-* `tlsproxy_enforce_tls`
-* `tlsproxy_service_name`
-* `tlsproxy_tls_cafile`
-* `tlsproxy_tls_capath`
-* `tlsproxy_tls_always_issue_session_ids`
-* `tlsproxy_tls_ask_ccert`
-* `tlsproxy_tls_ccert_verifydepth`
-* `tlsproxy_tls_cert_file`
-* `tlsproxy_tls_ciphers`
-* `tlsproxy_tls_dcert_file`
-* `tlsproxy_tls_dh1024_param_file`
-* `tlsproxy_tls_dh512_param_file`
-* `tlsproxy_tls_dkey_file`
-* `tlsproxy_tls_eccert_file`
-* `tlsproxy_tls_eckey_file`
-* `tlsproxy_tls_eecdh_grade`
-* `tlsproxy_tls_exclude_ciphers`
-* `tlsproxy_tls_fingerprint_digest`
-* `tlsproxy_tls_key_file`
-* `tlsproxy_tls_loglevel`
-* `tlsproxy_tls_mandatory_ciphers`
-* `tlsproxy_tls_mandatory_exclude_ciphers`
-* `tlsproxy_tls_mandatory_protocols`
-* `tlsproxy_tls_protocols`
-* `tlsproxy_tls_req_ccert`
-* `tlsproxy_tls_security_level`
-* `tlsproxy_tls_session_cache_timeout`
-* `tlsproxy_use_tls`
-* `tlsproxy_watchdog_timeout`
-* `trace_service_name`
-* `transport_maps`
-* `transport_retry_time`
-* `trigger_timeout`
-* `undisclosed_recipients_header`
-* `unknown_address_reject_code`
-* `unknown_address_tempfail_action`
-* `unknown_client_reject_code`
-* `unknown_helo_hostname_tempfail_action`
-* `unknown_hostname_reject_code`
-* `unknown_local_recipient_reject_code`
-* `unknown_relay_recipient_reject_code`
-* `unknown_virtual_alias_reject_code`
-* `unknown_virtual_mailbox_reject_code`
-* `unverified_recipient_defer_code`
-* `unverified_recipient_reject_code`
-* `unverified_recipient_reject_reason`
-* `unverified_recipient_tempfail_action`
-* `unverified_sender_defer_code`
-* `unverified_sender_reject_code`
-* `unverified_sender_reject_reason`
-* `unverified_sender_tempfail_action`
-* `verp_delimiter_filter`
-* `virtual_alias_domains`
-* `virtual_alias_expansion_limit`
-* `virtual_alias_maps`
-* `virtual_alias_recursion_limit`
-* `virtual_gid_maps`
-* `virtual_mailbox_base`
-* `virtual_mailbox_domains`
-* `virtual_mailbox_limit`
-* `virtual_mailbox_lock`
-* `virtual_mailbox_maps`
-* `virtual_minimum_uid`
-* `virtual_transport`
-* `virtual_uid_maps`
+| Parameter | Type | Has Default | Notes |
+| :-------- | :--: | :---------: | :---- |
+| twobounce_notice_recipient                             | String        |   | `2bounce_notice_recipient` is a violation of Puppet variable naming conventions |
+| access_map_defer_code                                  | String        |   | |
+| access_map_reject_code                                 | String        |   | |
+| address_verify_cache_cleanup_interval                  | String        |   | |
+| address_verify_default_transport                       | String        |   | |
+| address_verify_local_transport                         | String        |   | |
+| address_verify_map                                     | String        |   | |
+| address_verify_negative_cache                          | String        |   | |
+| address_verify_negative_expire_time                    | String        |   | |
+| address_verify_negative_refresh_time                   | String        |   | |
+| address_verify_poll_count                              | String        |   | |
+| address_verify_poll_delay                              | String        |   | |
+| address_verify_positive_expire_time                    | String        |   | |
+| address_verify_positive_refresh_time                   | String        |   | |
+| address_verify_relay_transport                         | String        |   | |
+| address_verify_relayhost                               | String        |   | |
+| address_verify_sender                                  | String        |   | |
+| address_verify_sender_dependent_default_transport_maps | Array         |   | |
+| address_verify_sender_dependent_relayhost_maps         | Array         |   | |
+| address_verify_sender_ttl                              | String        |   | |
+| address_verify_service_name                            | String        |   | |
+| address_verify_transport_maps                          | Array         |   | |
+| address_verify_virtual_transport                       | String        |   | |
+| alias_database                                         | Array         | X | |
+| alias_maps                                             | Array         | X | |
+| allow_mail_to_commands                                 | Array         |   | |
+| allow_mail_to_files                                    | Array         |   | |
+| allow_min_user                                         | String        |   | |
+| allow_percent_hack                                     | String        |   | |
+| allow_untrusted_routing                                | String        |   | |
+| alternate_config_directories                           | Array         |   | |
+| always_add_missing_headers                             | String        |   | |
+| always_bcc                                             | String        |   | |
+| anvil_rate_time_unit                                   | String        |   | |
+| anvil_status_update_time                               | String        |   | |
+| append_at_myorigin                                     | String        |   | |
+| append_dot_mydomain                                    | String        |   | |
+| application_event_drain_time                           | String        |   | |
+| authorized_flush_users                                 | Array         |   | |
+| authorized_mailq_users                                 | Array         |   | |
+| authorized_submit_users                                | Array         |   | |
+| backwards_bounce_logfile_compatibility                 | String        |   | |
+| berkeley_db_create_buffer_size                         | String        |   | |
+| berkeley_db_read_buffer_size                           | String        |   | |
+| best_mx_transport                                      | String        |   | |
+| biff                                                   | String        |   | |
+| body_checks                                            | Array         |   | |
+| body_checks_size_limit                                 | String        |   | |
+| bounce_notice_recipient                                | String        |   | |
+| bounce_queue_lifetime                                  | String        |   | |
+| bounce_service_name                                    | String        |   | |
+| bounce_size_limit                                      | String        |   | |
+| bounce_template_file                                   | String        |   | |
+| broken_sasl_auth_clients                               | String        |   | |
+| canonical_classes                                      | Array         |   | |
+| canonical_maps                                         | Array         |   | |
+| cleanup_service_name                                   | String        |   | |
+| command_directory                                      | String        | X | |
+| command_execution_directory                            | String        |   | |
+| command_expansion_filter                               | String        |   | |
+| command_time_limit                                     | String        |   | |
+| conf_dir                                               | Absolute_path | X | |
+| config_directory                                       | String        |   | |
+| connection_cache_protocol_timeout                      | String        |   | |
+| connection_cache_service_name                          | String        |   | |
+| connection_cache_status_update_time                    | String        |   | |
+| connection_cache_ttl_limit                             | String        |   | |
+| content_filter                                         | String        |   | |
+| cyrus_sasl_config_path                                 | Array         |   | |
+| daemon_directory                                       | String        | X | |
+| daemon_table_open_error_is_fatal                       | String        |   | |
+| daemon_timeout                                         | String        |   | |
+| data_directory                                         | String        | X | |
+| debug_peer_level                                       | String        | X | |
+| debug_peer_list                                        | Array         |   | |
+| debugger_command                                       | String        | X | |
+| default_database_type                                  | String        |   | |
+| default_delivery_slot_cost                             | String        |   | |
+| default_delivery_slot_discount                         | String        |   | |
+| default_delivery_slot_loan                             | String        |   | |
+| default_destination_concurrency_failed_cohort_limit    | String        |   | |
+| default_destination_concurrency_limit                  | String        |   | |
+| default_destination_concurrency_negative_feedback      | String        |   | |
+| default_destination_concurrency_positive_feedback      | String        |   | |
+| default_destination_rate_delay                         | String        |   | |
+| default_destination_recipient_limit                    | String        |   | |
+| default_extra_recipient_limit                          | String        |   | |
+| default_filter_nexthop                                 | String        |   | |
+| default_minimum_delivery_slots                         | String        |   | |
+| default_privs                                          | String        |   | |
+| default_process_limit                                  | String        |   | |
+| default_rbl_reply                                      | String        |   | |
+| default_recipient_limit                                | String        |   | |
+| default_recipient_refill_delay                         | String        |   | |
+| default_recipient_refill_limit                         | String        |   | |
+| default_services                                       | Hash          | X | |
+| default_transport                                      | String        |   | |
+| default_verp_delimiters                                | String        |   | |
+| defer_code                                             | String        |   | |
+| defer_service_name                                     | String        |   | |
+| defer_transports                                       | Array         |   | |
+| delay_logging_resolution_limit                         | String        |   | |
+| delay_notice_recipient                                 | String        |   | |
+| delay_warning_time                                     | String        |   | |
+| deliver_lock_attempts                                  | String        |   | |
+| deliver_lock_delay                                     | String        |   | |
+| destination_concurrency_feedback_debug                 | String        |   | |
+| detect_8bit_encoding_header                            | String        |   | |
+| disable_dns_lookups                                    | String        |   | |
+| disable_mime_input_processing                          | String        |   | |
+| disable_mime_output_conversion                         | String        |   | |
+| disable_verp_bounces                                   | String        |   | |
+| disable_vrfy_command                                   | String        |   | |
+| dnsblog_reply_delay                                    | String        |   | |
+| dnsblog_service_name                                   | String        |   | |
+| dont_remove                                            | String        |   | |
+| double_bounce_sender                                   | String        |   | |
+| duplicate_filter_limit                                 | String        |   | |
+| empty_address_default_transport_maps_lookup_key        | String        |   | |
+| empty_address_recipient                                | String        |   | |
+| empty_address_relayhost_maps_lookup_key                | String        |   | |
+| enable_long_queue_ids                                  | String        |   | |
+| enable_original_recipient                              | String        |   | |
+| error_notice_recipient                                 | String        |   | |
+| error_service_name                                     | String        |   | |
+| execution_directory_expansion_filter                   | String        |   | |
+| expand_owner_alias                                     | String        |   | |
+| export_environment                                     | Array         |   | |
+| fallback_transport                                     | String        |   | |
+| fallback_transport_maps                                | Array         |   | |
+| fast_flush_domains                                     | Array         |   | |
+| fast_flush_purge_time                                  | String        |   | |
+| fast_flush_refresh_time                                | String        |   | |
+| fault_injection_code                                   | String        |   | |
+| flush_service_name                                     | String        |   | |
+| fork_attempts                                          | String        |   | |
+| fork_delay                                             | String        |   | |
+| forward_expansion_filter                               | String        |   | |
+| forward_path                                           | Array         |   | |
+| frozen_delivered_to                                    | String        |   | |
+| hash_queue_depth                                       | String        |   | |
+| hash_queue_names                                       | Array         |   | |
+| header_address_token_limit                             | String        |   | |
+| header_checks                                          | Array         |   | |
+| header_size_limit                                      | String        |   | |
+| helpful_warnings                                       | String        |   | |
+| home_mailbox                                           | String        |   | |
+| hopcount_limit                                         | String        |   | |
+| html_directory                                         | String        | X | |
+| ignore_mx_lookup_error                                 | String        |   | |
+| import_environment                                     | Array         |   | |
+| in_flow_delay                                          | String        |   | |
+| inet_interfaces                                        | Array         | X | |
+| inet_protocols                                         | Array         | X | |
+| initial_destination_concurrency                        | String        |   | |
+| internal_mail_filter_classes                           | Array         |   | |
+| invalid_hostname_reject_code                           | String        |   | |
+| ipc_idle                                               | String        |   | |
+| ipc_timeout                                            | String        |   | |
+| ipc_ttl                                                | String        |   | |
+| line_length_limit                                      | String        |   | |
+| lmtp_address_preference                                | String        |   | |
+| lmtp_assume_final                                      | String        |   | |
+| lmtp_bind_address                                      | String        |   | |
+| lmtp_bind_address6                                     | String        |   | |
+| lmtp_body_checks                                       | Array         |   | |
+| lmtp_cname_overrides_servername                        | String        |   | |
+| lmtp_connect_timeout                                   | String        |   | |
+| lmtp_connection_cache_destinations                     | Array         |   | |
+| lmtp_connection_cache_on_demand                        | String        |   | |
+| lmtp_connection_cache_time_limit                       | String        |   | |
+| lmtp_connection_reuse_time_limit                       | String        |   | |
+| lmtp_data_done_timeout                                 | String        |   | |
+| lmtp_data_init_timeout                                 | String        |   | |
+| lmtp_data_xfer_timeout                                 | String        |   | |
+| lmtp_defer_if_no_mx_address_found                      | String        |   | |
+| lmtp_discard_lhlo_keyword_address_maps                 | Array         |   | |
+| lmtp_discard_lhlo_keywords                             | Array         |   | |
+| lmtp_dns_resolver_options                              | Array         |   | |
+| lmtp_enforce_tls                                       | String        |   | |
+| lmtp_generic_maps                                      | Array         |   | |
+| lmtp_header_checks                                     | Array         |   | |
+| lmtp_host_lookup                                       | Array         |   | |
+| lmtp_lhlo_name                                         | String        |   | |
+| lmtp_lhlo_timeout                                      | String        |   | |
+| lmtp_line_length_limit                                 | String        |   | |
+| lmtp_mail_timeout                                      | String        |   | |
+| lmtp_mime_header_checks                                | Array         |   | |
+| lmtp_mx_address_limit                                  | String        |   | |
+| lmtp_mx_session_limit                                  | String        |   | |
+| lmtp_nested_header_checks                              | Array         |   | |
+| lmtp_per_record_deadline                               | String        |   | |
+| lmtp_pix_workaround_delay_time                         | String        |   | |
+| lmtp_pix_workaround_maps                               | Array         |   | |
+| lmtp_pix_workaround_threshold_time                     | String        |   | |
+| lmtp_pix_workarounds                                   | Array         |   | |
+| lmtp_quit_timeout                                      | String        |   | |
+| lmtp_quote_rfc821_envelope                             | String        |   | |
+| lmtp_randomize_addresses                               | String        |   | |
+| lmtp_rcpt_timeout                                      | String        |   | |
+| lmtp_reply_filter                                      | String        |   | |
+| lmtp_rset_timeout                                      | String        |   | |
+| lmtp_sasl_auth_cache_name                              | String        |   | |
+| lmtp_sasl_auth_cache_time                              | String        |   | |
+| lmtp_sasl_auth_enable                                  | String        |   | |
+| lmtp_sasl_auth_soft_bounce                             | String        |   | |
+| lmtp_sasl_mechanism_filter                             | Array         |   | |
+| lmtp_sasl_password_maps                                | String        |   | |
+| lmtp_sasl_path                                         | String        |   | |
+| lmtp_sasl_security_options                             | Array         |   | |
+| lmtp_sasl_tls_security_options                         | Array         |   | |
+| lmtp_sasl_tls_verified_security_options                | Array         |   | |
+| lmtp_sasl_type                                         | String        |   | |
+| lmtp_send_dummy_mail_auth                              | String        |   | |
+| lmtp_send_xforward_command                             | String        |   | |
+| lmtp_sender_dependent_authentication                   | String        |   | |
+| lmtp_skip_5xx_greeting                                 | String        |   | |
+| lmtp_skip_quit_response                                | String        |   | |
+| lmtp_starttls_timeout                                  | String        |   | |
+| lmtp_tcp_port                                          | String        |   | |
+| lmtp_tls_block_early_mail_reply                        | String        |   | |
+| lmtp_tls_cafile                                        | String        |   | |
+| lmtp_tls_capath                                        | String        |   | |
+| lmtp_tls_cert_file                                     | String        |   | |
+| lmtp_tls_ciphers                                       | String        |   | |
+| lmtp_tls_dcert_file                                    | String        |   | |
+| lmtp_tls_dkey_file                                     | String        |   | |
+| lmtp_tls_eccert_file                                   | String        |   | |
+| lmtp_tls_eckey_file                                    | String        |   | |
+| lmtp_tls_enforce_peername                              | String        |   | |
+| lmtp_tls_exclude_ciphers                               | Array         |   | |
+| lmtp_tls_fingerprint_cert_match                        | Array         |   | |
+| lmtp_tls_fingerprint_digest                            | String        |   | |
+| lmtp_tls_key_file                                      | String        |   | |
+| lmtp_tls_loglevel                                      | String        |   | |
+| lmtp_tls_mandatory_ciphers                             | String        |   | |
+| lmtp_tls_mandatory_exclude_ciphers                     | Array         |   | |
+| lmtp_tls_mandatory_protocols                           | Array         |   | |
+| lmtp_tls_note_starttls_offer                           | String        |   | |
+| lmtp_tls_per_site                                      | Array         |   | |
+| lmtp_tls_policy_maps                                   | Array         |   | |
+| lmtp_tls_protocols                                     | Array         |   | |
+| lmtp_tls_scert_verifydepth                             | String        |   | |
+| lmtp_tls_secure_cert_match                             | Array         |   | |
+| lmtp_tls_security_level                                | String        |   | |
+| lmtp_tls_session_cache_database                        | String        |   | |
+| lmtp_tls_session_cache_timeout                         | String        |   | |
+| lmtp_tls_verify_cert_match                             | Array         |   | |
+| lmtp_use_tls                                           | String        |   | |
+| lmtp_xforward_timeout                                  | String        |   | |
+| local_command_shell                                    | String        |   | |
+| local_header_rewrite_clients                           | Array         |   | |
+| local_recipient_maps                                   | Array         |   | |
+| local_transport                                        | String        |   | |
+| lookup_packages                                        | Hash          | X | |
+| luser_relay                                            | String        |   | |
+| mail_name                                              | String        |   | |
+| mail_owner                                             | String        | X | |
+| mail_release_date                                      | String        |   | |
+| mail_spool_directory                                   | String        |   | |
+| mail_version                                           | String        |   | |
+| mailbox_command                                        | String        |   | |
+| mailbox_command_maps                                   | Array         |   | |
+| mailbox_delivery_lock                                  | Array         |   | |
+| mailbox_size_limit                                     | String        |   | |
+| mailbox_transport                                      | String        |   | |
+| mailbox_transport_maps                                 | Array         |   | |
+| mailq_path                                             | String        | X | |
+| manpage_directory                                      | String        | X | |
+| maps_rbl_domains                                       | Array         |   | |
+| maps_rbl_reject_code                                   | String        |   | |
+| masquerade_classes                                     | Array         |   | |
+| masquerade_domains                                     | Array         |   | |
+| masquerade_exceptions                                  | Array         |   | |
+| master_service_disable                                 | Array         |   | |
+| max_idle                                               | String        |   | |
+| max_use                                                | String        |   | |
+| maximal_backoff_time                                   | String        |   | |
+| maximal_queue_lifetime                                 | String        |   | |
+| message_reject_characters                              | String        |   | |
+| message_size_limit                                     | String        |   | |
+| message_strip_characters                               | String        |   | |
+| milter_command_timeout                                 | String        |   | |
+| milter_connect_macros                                  | String        |   | |
+| milter_connect_timeout                                 | String        |   | |
+| milter_content_timeout                                 | String        |   | |
+| milter_data_macros                                     | String        |   | |
+| milter_default_action                                  | String        |   | |
+| milter_end_of_data_macros                              | String        |   | |
+| milter_end_of_header_macros                            | String        |   | |
+| milter_header_checks                                   | Array         |   | |
+| milter_helo_macros                                     | String        |   | |
+| milter_macro_daemon_name                               | String        |   | |
+| milter_macro_v                                         | String        |   | |
+| milter_mail_macros                                     | String        |   | |
+| milter_protocol                                        | String        |   | |
+| milter_rcpt_macros                                     | String        |   | |
+| milter_unknown_command_macros                          | String        |   | |
+| mime_boundary_length_limit                             | String        |   | |
+| mime_header_checks                                     | Array         |   | |
+| mime_nesting_limit                                     | String        |   | |
+| minimal_backoff_time                                   | String        |   | |
+| multi_instance_directories                             | Array         |   | |
+| multi_instance_enable                                  | String        |   | |
+| multi_instance_group                                   | String        |   | |
+| multi_instance_name                                    | String        |   | |
+| multi_instance_wrapper                                 | String        |   | |
+| multi_recipient_bounce_reject_code                     | String        |   | |
+| mydestination                                          | Array         | X | |
+| mydomain                                               | String        |   | |
+| myhostname                                             | String        |   | |
+| mynetworks                                             | Array         |   | |
+| mynetworks_style                                       | String        |   | |
+| myorigin                                               | String        |   | |
+| nested_header_checks                                   | Array         |   | |
+| newaliases_path                                        | String        | X | |
+| non_fqdn_reject_code                                   | String        |   | |
+| non_smtpd_milters                                      | Array         |   | |
+| notify_classes                                         | Array         |   | |
+| owner_request_special                                  | String        |   | |
+| package_name                                           | String        | X | |
+| parent_domain_matches_subdomains                       | Array         |   | |
+| permit_mx_backup_networks                              | Array         |   | |
+| pickup_service_name                                    | String        |   | |
+| plaintext_reject_code                                  | String        |   | |
+| postmulti_control_commands                             | Array         |   | |
+| postmulti_start_commands                               | Array         |   | |
+| postmulti_stop_commands                                | Array         |   | |
+| postscreen_access_list                                 | Array         |   | |
+| postscreen_bare_newline_action                         | String        |   | |
+| postscreen_bare_newline_enable                         | String        |   | |
+| postscreen_bare_newline_ttl                            | String        |   | |
+| postscreen_blacklist_action                            | String        |   | |
+| postscreen_cache_cleanup_interval                      | String        |   | |
+| postscreen_cache_map                                   | String        |   | |
+| postscreen_cache_retention_time                        | String        |   | |
+| postscreen_client_connection_count_limit               | String        |   | |
+| postscreen_command_count_limit                         | String        |   | |
+| postscreen_command_filter                              | String        |   | |
+| postscreen_command_time_limit                          | String        |   | |
+| postscreen_disable_vrfy_command                        | String        |   | |
+| postscreen_discard_ehlo_keyword_address_maps           | Array         |   | |
+| postscreen_discard_ehlo_keywords                       | Array         |   | |
+| postscreen_dnsbl_action                                | String        |   | |
+| postscreen_dnsbl_reply_map                             | String        |   | |
+| postscreen_dnsbl_sites                                 | Array         |   | |
+| postscreen_dnsbl_threshold                             | String        |   | |
+| postscreen_dnsbl_ttl                                   | String        |   | |
+| postscreen_enforce_tls                                 | String        |   | |
+| postscreen_expansion_filter                            | String        |   | |
+| postscreen_forbidden_commands                          | Array         |   | |
+| postscreen_greet_action                                | String        |   | |
+| postscreen_greet_banner                                | String        |   | |
+| postscreen_greet_ttl                                   | String        |   | |
+| postscreen_greet_wait                                  | String        |   | |
+| postscreen_helo_required                               | String        |   | |
+| postscreen_non_smtp_command_action                     | String        |   | |
+| postscreen_non_smtp_command_enable                     | String        |   | |
+| postscreen_non_smtp_command_ttl                        | String        |   | |
+| postscreen_pipelining_action                           | String        |   | |
+| postscreen_pipelining_enable                           | String        |   | |
+| postscreen_pipelining_ttl                              | String        |   | |
+| postscreen_post_queue_limit                            | String        |   | |
+| postscreen_pre_queue_limit                             | String        |   | |
+| postscreen_reject_footer                               | String        |   | |
+| postscreen_tls_security_level                          | String        |   | |
+| postscreen_upstream_proxy_protocol                     | String        |   | |
+| postscreen_upstream_proxy_timeout                      | String        |   | |
+| postscreen_use_tls                                     | String        |   | |
+| postscreen_watchdog_timeout                            | String        |   | |
+| postscreen_whitelist_interfaces                        | Array         |   | |
+| prepend_delivered_header                               | Array         |   | |
+| process_id_directory                                   | String        |   | |
+| propagate_unmatched_extensions                         | Array         |   | |
+| proxy_interfaces                                       | Array         |   | |
+| proxy_read_maps                                        | Array         |   | |
+| proxy_write_maps                                       | Array         |   | |
+| proxymap_service_name                                  | String        |   | |
+| proxywrite_service_name                                | String        |   | |
+| qmgr_clog_warn_time                                    | String        |   | |
+| qmgr_daemon_timeout                                    | String        |   | |
+| qmgr_fudge_factor                                      | String        |   | |
+| qmgr_ipc_timeout                                       | String        |   | |
+| qmgr_message_active_limit                              | String        |   | |
+| qmgr_message_recipient_limit                           | String        |   | |
+| qmgr_message_recipient_minimum                         | String        |   | |
+| qmqpd_authorized_clients                               | Array         |   | |
+| qmqpd_client_port_logging                              | String        |   | |
+| qmqpd_error_delay                                      | String        |   | |
+| qmqpd_timeout                                          | String        |   | |
+| queue_directory                                        | String        | X | |
+| queue_file_attribute_count_limit                       | String        |   | |
+| queue_minfree                                          | String        |   | |
+| queue_run_delay                                        | String        |   | |
+| queue_service_name                                     | String        |   | |
+| rbl_reply_maps                                         | Array         |   | |
+| readme_directory                                       | String        | X | |
+| receive_override_options                               | Array         |   | |
+| recipient_bcc_maps                                     | Array         |   | |
+| recipient_canonical_classes                            | Array         |   | |
+| recipient_canonical_maps                               | Array         |   | |
+| recipient_delimiter                                    | String        |   | |
+| reject_code                                            | String        |   | |
+| reject_tempfail_action                                 | String        |   | |
+| relay_clientcerts                                      | Array         |   | |
+| relay_domains                                          | Array         |   | |
+| relay_domains_reject_code                              | String        |   | |
+| relay_recipient_maps                                   | Array         |   | |
+| relay_transport                                        | String        |   | |
+| relayhost                                              | String        |   | |
+| relocated_maps                                         | Array         |   | |
+| remote_header_rewrite_domain                           | String        |   | |
+| require_home_directory                                 | String        |   | |
+| reset_owner_alias                                      | String        |   | |
+| resolve_dequoted_address                               | String        |   | |
+| resolve_null_domain                                    | String        |   | |
+| resolve_numeric_domain                                 | String        |   | |
+| rewrite_service_name                                   | String        |   | |
+| sample_directory                                       | String        | X | |
+| send_cyrus_sasl_authzid                                | String        |   | |
+| sender_bcc_maps                                        | Array         |   | |
+| sender_canonical_classes                               | Array         |   | |
+| sender_canonical_maps                                  | Array         |   | |
+| sender_dependent_default_transport_maps                | Array         |   | |
+| sender_dependent_relayhost_maps                        | Array         |   | |
+| sendmail_fix_line_endings                              | String        |   | |
+| sendmail_path                                          | String        | X | |
+| service_name                                           | String        | X | |
+| service_throttle_time                                  | String        |   | |
+| setgid_group                                           | String        | X | |
+| show_user_unknown_table_name                           | String        |   | |
+| showq_service_name                                     | String        |   | |
+| smtp_address_preference                                | String        |   | |
+| smtp_always_send_ehlo                                  | String        |   | |
+| smtp_bind_address                                      | String        |   | |
+| smtp_bind_address6                                     | String        |   | |
+| smtp_body_checks                                       | Array         |   | |
+| smtp_cname_overrides_servername                        | String        |   | |
+| smtp_connect_timeout                                   | String        |   | |
+| smtp_connection_cache_destinations                     | Array         |   | |
+| smtp_connection_cache_on_demand                        | String        |   | |
+| smtp_connection_cache_time_limit                       | String        |   | |
+| smtp_connection_reuse_time_limit                       | String        |   | |
+| smtp_data_done_timeout                                 | String        |   | |
+| smtp_data_init_timeout                                 | String        |   | |
+| smtp_data_xfer_timeout                                 | String        |   | |
+| smtp_defer_if_no_mx_address_found                      | String        |   | |
+| smtp_discard_ehlo_keyword_address_maps                 | Array         |   | |
+| smtp_discard_ehlo_keywords                             | Array         |   | |
+| smtp_dns_resolver_options                              | Array         |   | |
+| smtp_enforce_tls                                       | String        |   | |
+| smtp_fallback_relay                                    | Array         |   | |
+| smtp_generic_maps                                      | Array         |   | |
+| smtp_header_checks                                     | Array         |   | |
+| smtp_helo_name                                         | String        |   | |
+| smtp_helo_timeout                                      | String        |   | |
+| smtp_host_lookup                                       | Array         |   | |
+| smtp_line_length_limit                                 | String        |   | |
+| smtp_mail_timeout                                      | String        |   | |
+| smtp_mime_header_checks                                | Array         |   | |
+| smtp_mx_address_limit                                  | String        |   | |
+| smtp_mx_session_limit                                  | String        |   | |
+| smtp_nested_header_checks                              | Array         |   | |
+| smtp_never_send_ehlo                                   | String        |   | |
+| smtp_per_record_deadline                               | String        |   | |
+| smtp_pix_workaround_delay_time                         | String        |   | |
+| smtp_pix_workaround_maps                               | Array         |   | |
+| smtp_pix_workaround_threshold_time                     | String        |   | |
+| smtp_pix_workarounds                                   | Array         |   | |
+| smtp_quit_timeout                                      | String        |   | |
+| smtp_quote_rfc821_envelope                             | String        |   | |
+| smtp_randomize_addresses                               | String        |   | |
+| smtp_rcpt_timeout                                      | String        |   | |
+| smtp_reply_filter                                      | String        |   | |
+| smtp_rset_timeout                                      | String        |   | |
+| smtp_sasl_auth_cache_name                              | String        |   | |
+| smtp_sasl_auth_cache_time                              | String        |   | |
+| smtp_sasl_auth_enable                                  | String        |   | |
+| smtp_sasl_auth_soft_bounce                             | String        |   | |
+| smtp_sasl_mechanism_filter                             | Array         |   | |
+| smtp_sasl_password_maps                                | Array         |   | |
+| smtp_sasl_path                                         | String        |   | |
+| smtp_sasl_security_options                             | Array         |   | |
+| smtp_sasl_tls_security_options                         | Array         |   | |
+| smtp_sasl_tls_verified_security_options                | Array         |   | |
+| smtp_sasl_type                                         | String        |   | |
+| smtp_send_dummy_mail_auth                              | String        |   | |
+| smtp_send_xforward_command                             | String        |   | |
+| smtp_sender_dependent_authentication                   | String        |   | |
+| smtp_skip_5xx_greeting                                 | String        |   | |
+| smtp_skip_quit_response                                | String        |   | |
+| smtp_starttls_timeout                                  | String        |   | |
+| smtp_tls_block_early_mail_reply                        | String        |   | |
+| smtp_tls_cafile                                        | String        |   | |
+| smtp_tls_capath                                        | String        |   | |
+| smtp_tls_cert_file                                     | String        |   | |
+| smtp_tls_ciphers                                       | String        |   | |
+| smtp_tls_dcert_file                                    | String        |   | |
+| smtp_tls_dkey_file                                     | String        |   | |
+| smtp_tls_eccert_file                                   | String        |   | |
+| smtp_tls_eckey_file                                    | String        |   | |
+| smtp_tls_enforce_peername                              | String        |   | |
+| smtp_tls_exclude_ciphers                               | Array         |   | |
+| smtp_tls_fingerprint_cert_match                        | Array         |   | |
+| smtp_tls_fingerprint_digest                            | String        |   | |
+| smtp_tls_key_file                                      | String        |   | |
+| smtp_tls_loglevel                                      | String        |   | |
+| smtp_tls_mandatory_ciphers                             | String        |   | |
+| smtp_tls_mandatory_exclude_ciphers                     | Array         |   | |
+| smtp_tls_mandatory_protocols                           | Array         |   | |
+| smtp_tls_note_starttls_offer                           | String        |   | |
+| smtp_tls_per_site                                      | Array         |   | |
+| smtp_tls_policy_maps                                   | Array         |   | |
+| smtp_tls_protocols                                     | Array         |   | |
+| smtp_tls_scert_verifydepth                             | String        |   | |
+| smtp_tls_secure_cert_match                             | Array         |   | |
+| smtp_tls_security_level                                | String        |   | |
+| smtp_tls_session_cache_database                        | String        |   | |
+| smtp_tls_session_cache_timeout                         | String        |   | |
+| smtp_tls_verify_cert_match                             | Array         |   | |
+| smtp_use_tls                                           | String        |   | |
+| smtp_xforward_timeout                                  | String        |   | |
+| smtpd_authorized_verp_clients                          | Array         |   | |
+| smtpd_authorized_xclient_hosts                         | Array         |   | |
+| smtpd_authorized_xforward_hosts                        | Array         |   | |
+| smtpd_banner                                           | String        |   | |
+| smtpd_client_connection_count_limit                    | String        |   | |
+| smtpd_client_connection_rate_limit                     | String        |   | |
+| smtpd_client_event_limit_exceptions                    | Array         |   | |
+| smtpd_client_message_rate_limit                        | String        |   | |
+| smtpd_client_new_tls_session_rate_limit                | String        |   | |
+| smtpd_client_port_logging                              | String        |   | |
+| smtpd_client_recipient_rate_limit                      | String        |   | |
+| smtpd_client_restrictions                              | Array         |   | |
+| smtpd_command_filter                                   | String        |   | |
+| smtpd_data_restrictions                                | Array         |   | |
+| smtpd_delay_open_until_valid_rcpt                      | String        |   | |
+| smtpd_delay_reject                                     | String        |   | |
+| smtpd_discard_ehlo_keyword_address_maps                | Array         |   | |
+| smtpd_discard_ehlo_keywords                            | Array         |   | |
+| smtpd_end_of_data_restrictions                         | Array         |   | |
+| smtpd_enforce_tls                                      | String        |   | |
+| smtpd_error_sleep_time                                 | String        |   | |
+| smtpd_etrn_restrictions                                | Array         |   | |
+| smtpd_expansion_filter                                 | String        |   | |
+| smtpd_forbidden_commands                               | Array         |   | |
+| smtpd_hard_error_limit                                 | String        |   | |
+| smtpd_helo_required                                    | String        |   | |
+| smtpd_helo_restrictions                                | Array         |   | |
+| smtpd_history_flush_threshold                          | String        |   | |
+| smtpd_junk_command_limit                               | String        |   | |
+| smtpd_log_access_permit_actions                        | String        |   | |
+| smtpd_milters                                          | Array         |   | |
+| smtpd_noop_commands                                    | Array         |   | |
+| smtpd_null_access_lookup_key                           | String        |   | |
+| smtpd_peername_lookup                                  | String        |   | |
+| smtpd_per_record_deadline                              | String        |   | |
+| smtpd_policy_service_max_idle                          | String        |   | |
+| smtpd_policy_service_max_ttl                           | String        |   | |
+| smtpd_policy_service_timeout                           | String        |   | |
+| smtpd_proxy_ehlo                                       | String        |   | |
+| smtpd_proxy_filter                                     | String        |   | |
+| smtpd_proxy_options                                    | Array         |   | |
+| smtpd_proxy_timeout                                    | String        |   | |
+| smtpd_recipient_limit                                  | String        |   | |
+| smtpd_recipient_overshoot_limit                        | String        |   | |
+| smtpd_recipient_restrictions                           | Array         |   | |
+| smtpd_reject_footer                                    | String        |   | |
+| smtpd_reject_unlisted_recipient                        | String        |   | |
+| smtpd_reject_unlisted_sender                           | String        |   | |
+| smtpd_relay_restrictions                               | Array         |   | |
+| smtpd_restriction_classes                              | Array         |   | |
+| smtpd_sasl_auth_enable                                 | String        |   | |
+| smtpd_sasl_authenticated_header                        | String        |   | |
+| smtpd_sasl_exceptions_networks                         | Array         |   | |
+| smtpd_sasl_local_domain                                | String        |   | |
+| smtpd_sasl_path                                        | String        |   | |
+| smtpd_sasl_security_options                            | Array         |   | |
+| smtpd_sasl_tls_security_options                        | Array         |   | |
+| smtpd_sasl_type                                        | String        |   | |
+| smtpd_sender_login_maps                                | Array         |   | |
+| smtpd_sender_restrictions                              | Array         |   | |
+| smtpd_service_name                                     | String        |   | |
+| smtpd_soft_error_limit                                 | String        |   | |
+| smtpd_starttls_timeout                                 | String        |   | |
+| smtpd_timeout                                          | String        |   | |
+| smtpd_tls_always_issue_session_ids                     | String        |   | |
+| smtpd_tls_ask_ccert                                    | String        |   | |
+| smtpd_tls_auth_only                                    | String        |   | |
+| smtpd_tls_cafile                                       | String        |   | |
+| smtpd_tls_capath                                       | String        |   | |
+| smtpd_tls_ccert_verifydepth                            | String        |   | |
+| smtpd_tls_cert_file                                    | String        |   | |
+| smtpd_tls_ciphers                                      | String        |   | |
+| smtpd_tls_dcert_file                                   | String        |   | |
+| smtpd_tls_dh1024_param_file                            | String        |   | |
+| smtpd_tls_dh512_param_file                             | String        |   | |
+| smtpd_tls_dkey_file                                    | String        |   | |
+| smtpd_tls_eccert_file                                  | String        |   | |
+| smtpd_tls_eckey_file                                   | String        |   | |
+| smtpd_tls_eecdh_grade                                  | String        |   | |
+| smtpd_tls_exclude_ciphers                              | Array         |   | |
+| smtpd_tls_fingerprint_digest                           | String        |   | |
+| smtpd_tls_key_file                                     | String        |   | |
+| smtpd_tls_loglevel                                     | String        |   | |
+| smtpd_tls_mandatory_ciphers                            | String        |   | |
+| smtpd_tls_mandatory_exclude_ciphers                    | Array         |   | |
+| smtpd_tls_mandatory_protocols                          | Array         |   | |
+| smtpd_tls_protocols                                    | Array         |   | |
+| smtpd_tls_received_header                              | String        |   | |
+| smtpd_tls_req_ccert                                    | String        |   | |
+| smtpd_tls_security_level                               | String        |   | |
+| smtpd_tls_session_cache_database                       | String        |   | |
+| smtpd_tls_session_cache_timeout                        | String        |   | |
+| smtpd_tls_wrappermode                                  | String        |   | |
+| smtpd_upstream_proxy_protocol                          | String        |   | |
+| smtpd_upstream_proxy_timeout                           | String        |   | |
+| smtpd_use_tls                                          | String        |   | |
+| soft_bounce                                            | String        |   | |
+| stale_lock_time                                        | String        |   | |
+| strict_7bit_headers                                    | String        |   | |
+| strict_8bitmime                                        | String        |   | |
+| strict_8bitmime_body                                   | String        |   | |
+| strict_mailbox_ownership                               | String        |   | |
+| strict_mime_encoding_domain                            | String        |   | |
+| strict_rfc821_envelopes                                | String        |   | |
+| sun_mailtool_compatibility                             | String        |   | |
+| swap_bangpath                                          | String        |   | |
+| syslog_facility                                        | String        |   | |
+| syslog_name                                            | String        |   | |
+| tcp_windowsize                                         | String        |   | |
+| tls_append_default_ca                                  | String        |   | |
+| tls_daemon_random_bytes                                | String        |   | |
+| tls_disable_workarounds                                | Array         |   | |
+| tls_eecdh_strong_curve                                 | String        |   | |
+| tls_eecdh_ultra_curve                                  | String        |   | |
+| tls_export_cipherlist                                  | String        |   | |
+| tls_high_cipherlist                                    | String        |   | |
+| tls_legacy_public_key_fingerprints                     | String        |   | |
+| tls_low_cipherlist                                     | String        |   | |
+| tls_medium_cipherlist                                  | String        |   | |
+| tls_null_cipherlist                                    | String        |   | |
+| tls_preempt_cipherlist                                 | String        |   | |
+| tls_random_bytes                                       | String        |   | |
+| tls_random_exchange_name                               | String        |   | |
+| tls_random_prng_update_period                          | String        |   | |
+| tls_random_reseed_period                               | String        |   | |
+| tls_random_source                                      | String        |   | |
+| tlsproxy_enforce_tls                                   | String        |   | |
+| tlsproxy_service_name                                  | String        |   | |
+| tlsproxy_tls_always_issue_session_ids                  | String        |   | |
+| tlsproxy_tls_ask_ccert                                 | String        |   | |
+| tlsproxy_tls_cafile                                    | String        |   | |
+| tlsproxy_tls_capath                                    | String        |   | |
+| tlsproxy_tls_ccert_verifydepth                         | String        |   | |
+| tlsproxy_tls_cert_file                                 | String        |   | |
+| tlsproxy_tls_ciphers                                   | String        |   | |
+| tlsproxy_tls_dcert_file                                | String        |   | |
+| tlsproxy_tls_dh1024_param_file                         | String        |   | |
+| tlsproxy_tls_dh512_param_file                          | String        |   | |
+| tlsproxy_tls_dkey_file                                 | String        |   | |
+| tlsproxy_tls_eccert_file                               | String        |   | |
+| tlsproxy_tls_eckey_file                                | String        |   | |
+| tlsproxy_tls_eecdh_grade                               | String        |   | |
+| tlsproxy_tls_exclude_ciphers                           | Array         |   | |
+| tlsproxy_tls_fingerprint_digest                        | String        |   | |
+| tlsproxy_tls_key_file                                  | String        |   | |
+| tlsproxy_tls_loglevel                                  | String        |   | |
+| tlsproxy_tls_mandatory_ciphers                         | String        |   | |
+| tlsproxy_tls_mandatory_exclude_ciphers                 | Array         |   | |
+| tlsproxy_tls_mandatory_protocols                       | Array         |   | |
+| tlsproxy_tls_protocols                                 | Array         |   | |
+| tlsproxy_tls_req_ccert                                 | String        |   | |
+| tlsproxy_tls_security_level                            | String        |   | |
+| tlsproxy_tls_session_cache_timeout                     | String        |   | |
+| tlsproxy_use_tls                                       | String        |   | |
+| tlsproxy_watchdog_timeout                              | String        |   | |
+| trace_service_name                                     | String        |   | |
+| transport_maps                                         | Array         |   | |
+| transport_retry_time                                   | String        |   | |
+| trigger_timeout                                        | String        |   | |
+| undisclosed_recipients_header                          | String        |   | |
+| unknown_address_reject_code                            | String        |   | |
+| unknown_address_tempfail_action                        | String        |   | |
+| unknown_client_reject_code                             | String        |   | |
+| unknown_helo_hostname_tempfail_action                  | String        |   | |
+| unknown_hostname_reject_code                           | String        |   | |
+| unknown_local_recipient_reject_code                    | String        | X | |
+| unknown_relay_recipient_reject_code                    | String        |   | |
+| unknown_virtual_alias_reject_code                      | String        |   | |
+| unknown_virtual_mailbox_reject_code                    | String        |   | |
+| unverified_recipient_defer_code                        | String        |   | |
+| unverified_recipient_reject_code                       | String        |   | |
+| unverified_recipient_reject_reason                     | String        |   | |
+| unverified_recipient_tempfail_action                   | String        |   | |
+| unverified_sender_defer_code                           | String        |   | |
+| unverified_sender_reject_code                          | String        |   | |
+| unverified_sender_reject_reason                        | String        |   | |
+| unverified_sender_tempfail_action                      | String        |   | |
+| verp_delimiter_filter                                  | String        |   | |
+| virtual_alias_domains                                  | Array         |   | |
+| virtual_alias_expansion_limit                          | String        |   | |
+| virtual_alias_maps                                     | Array         |   | |
+| virtual_alias_recursion_limit                          | String        |   | |
+| virtual_gid_maps                                       | Array         |   | |
+| virtual_mailbox_base                                   | String        |   | |
+| virtual_mailbox_domains                                | Array         |   | |
+| virtual_mailbox_limit                                  | String        |   | |
+| virtual_mailbox_lock                                   | Array         |   | |
+| virtual_mailbox_maps                                   | Array         |   | |
+| virtual_minimum_uid                                    | String        |   | |
+| virtual_transport                                      | String        |   | |
+| virtual_uid_maps                                       | Array         |   | |
 
 #### Defined Type: `postfix::main`
 
