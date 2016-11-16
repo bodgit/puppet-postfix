@@ -313,6 +313,7 @@ class postfix (
   $multi_recipient_bounce_reject_code                     = undef,
   $mydestination                                          = $::postfix::params::mydestination,
   $mydomain                                               = undef,
+  $mydomain_fallback                                      = undef,
   $myhostname                                             = undef,
   $mynetworks                                             = undef,
   $mynetworks_style                                       = undef,
@@ -1341,6 +1342,7 @@ class postfix (
     validate_array($mydestination)
   }
   validate_string($mydomain)
+  validate_string($mydomain_fallback)
   validate_string($myhostname)
   if $mynetworks {
     validate_array($mynetworks)

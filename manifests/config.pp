@@ -764,6 +764,7 @@ class postfix::config {
       default => join($::postfix::mydestination, ', '),
     },
     'mydomain'                                               => $::postfix::mydomain,
+    'mydomain_fallback'                                      => $::postfix::mydomain_fallback,
     'myhostname'                                             => $::postfix::myhostname,
     'mynetworks'                                             => $::postfix::mynetworks ? {
       undef   => undef,
