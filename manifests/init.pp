@@ -52,6 +52,7 @@
 # @param lookup_packages
 # @param package_name
 # @param service_name
+# @param service_restart_command
 # @param twobounce_notice_recipient `2bounce_notice_recipient` is a violation
 #   of Puppet variable naming conventions.
 # @param access_map_defer_code
@@ -781,6 +782,7 @@ class postfix (
   Hash[Postfix::Type::Lookup, String] $lookup_packages,
   String                              $package_name,
   String                              $service_name,
+  Optional[String]                    $service_restart_command,
   # main.cf parameters below
   Optional[String]                    $twobounce_notice_recipient,
   Optional[String]                    $access_map_defer_code,

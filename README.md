@@ -130,6 +130,21 @@ postfix::lookup::ldap { '/etc/postfix/virtualrecipients.cf':
 }
 ```
 
+## Service management
+
+By default this module restarts the postfix service on config changes.
+
+To prevent clients being disconnected during mail delivery,
+this behaviour can be changed using the parameter `service_restart_command` of class `postfix::init`.
+
+Note, some changes need a restart to get effect:
+[http://www.postfix.org/postconf.5.html](http://www.postfix.org/postconf.5.html)
+
+Example in Hiera for reloading postfix on changes:
+```
+postfix::service_restart_command: '/usr/bin/systemctl reload postfix.service'
+```
+
 ## Reference
 
 The reference documentation is generated with

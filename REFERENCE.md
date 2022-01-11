@@ -136,6 +136,7 @@ The following parameters are available in the `postfix` class:
 * [`lookup_packages`](#lookup_packages)
 * [`package_name`](#package_name)
 * [`service_name`](#service_name)
+* [`service_restart_command`](#service_restart_command)
 * [`twobounce_notice_recipient`](#twobounce_notice_recipient)
 * [`access_map_defer_code`](#access_map_defer_code)
 * [`access_map_reject_code`](#access_map_reject_code)
@@ -873,6 +874,12 @@ Data type: `String`
 
 
 ##### <a name="service_name"></a>`service_name`
+
+Data type: `String`
+
+
+
+##### <a name="service_restart_command"></a>`service_restart_command`
 
 Data type: `String`
 
