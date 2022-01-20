@@ -3,6 +3,7 @@ postfix::conf_dir: '/etc/postfix'
 postfix::lookup_packages: {}
 postfix::package_name: 'postfix'
 postfix::service_name: 'postfix'
+postfix::service_restart_command: ~
 postfix::services: {}
 postfix::twobounce_notice_recipient: ~
 postfix::access_map_defer_code: ~
