@@ -24,11 +24,12 @@
 #
 # @since 1.0.0
 define postfix::lookup::database (
-  Enum['present', 'absent']       $ensure  = 'present',
-  Stdlib::Absolutepath            $path    = $title,
-  Postfix::Type::Lookup::Database $type    = $postfix::default_database_type,
-  Optional[String]                $content = undef,
-  Optional[String]                $source  = undef,
+  Enum['present', 'absent']       $ensure      = 'present',
+  Stdlib::Absolutepath            $path        = $title,
+  Postfix::Type::Lookup::Database $type        = $postfix::default_database_type,
+  Enum['lookup', 'aliases']       $input_type  = 'lookup',
+  Optional[String]                $content     = undef,
+  Optional[String]                $source      = undef,
 ) {
 
   include postfix
@@ -96,7 +97,16 @@ define postfix::lookup::database (
         $memo + ["[ -f ${x} ]", "[ $(stat -c '%Y' ${x}) -gt $(stat -c '%Y' ${path}) ]"]
       }, ' && ')
 
-      exec { "postmap ${type}:${path}":
+      case $input_type {
+          'lookup': {
+            $postcmd = 'postmap'
+          }
+          'aliases': {
+            $postcmd = 'postalias'
+          }
+      }
+
+      exec { "${postcmd} ${type}:${path}":
         path    => $::path,
         unless  => $unless,
         require => File[$path],

@@ -8,7 +8,8 @@ describe 'postfix' do
       }
 
       postfix::lookup::database { '/etc/aliases':
-        type => 'hash',
+        type       => 'hash',
+        input_type => 'aliases',
       }
 
       Mailalias <||> -> Postfix::Lookup::Database['/etc/aliases']
