@@ -20,10 +20,14 @@ class postfix::config {
     mode   => '0644',
   }
 
-  # Augeas 1.12.0 has a lens that doesn't recognise unix-dgram in master.cf
-  augeas::lens { 'postfix_master':
-    lens_content => file("${module_name}/postfix_master.aug"),
-    stock_since  => '1.12.1',
+  # Augeas 1.12.0 has a lens that doesn't recognise unix-dgram in master.cf, however Debian's
+  # package has patched in support.
+  if ! ($facts['os']['family'] == 'Debian' and Integer($facts['os']['release']['major']) >= 11) {
+    augeas::lens { 'postfix_master':
+      lens_content => file("${module_name}/postfix_master.aug"),
+      stock_since  => '1.12.1',
+      before       => [Postfix_master, Resources['postfix_master']],
+    }
   }
 
   Postfix_main {
@@ -32,7 +36,6 @@ class postfix::config {
 
   Postfix_master {
     target  => $master_cf,
-    require => Augeas::Lens['postfix_master'],
   }
 
   resources { 'postfix_main':
@@ -41,7 +44,6 @@ class postfix::config {
 
   resources { 'postfix_master':
     purge   => true,
-    require => Augeas::Lens['postfix_master'],
   }
 
   $config = delete_undef_values({
